@@ -48,6 +48,7 @@ function validateInput(input) {
             errors[errorName] = "please fill this in";
         }
     }
+    console.log('errors', errors)
     return errors;
 }
 
@@ -69,13 +70,16 @@ class Form extends Component {
     }
 
     handleInputChange = e => {
-        let input = e.target;
+      let input = e.target;
+
+      this.setState({ ...this.state, [input.name]: input.value });
+
+      setTimeout(() => {
+        // setTimeout for blur
         let errors = validateInput(input);
         // console.log("errors", errors);
-
-        this.setState({
-            ...this.state, [input.name]: input.value,  ...errors
-        });
+        this.setState({ ...this.state, [input.name]: input.value, ...errors });
+      }, 1000);
     };
 
     onBlur = e => {
