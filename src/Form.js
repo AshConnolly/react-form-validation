@@ -74,12 +74,12 @@ class Form extends Component {
 
       this.setState({ ...this.state, [input.name]: input.value });
 
-      setTimeout(() => {
+      // setTimeout(() => {
         // setTimeout for blur
         let errors = validateInput(input);
         // console.log("errors", errors);
         this.setState({ ...this.state, [input.name]: input.value, ...errors });
-      }, 1000);
+      // }, 1000);
     };
 
     onBlur = e => {
@@ -98,7 +98,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <h1>Form</h1>
+                {/*<h1>Form</h1>*/}
                  <form action="" onSubmit={this.handleSubmit}>
             <div>
                <label htmlFor="name">Name</label>
