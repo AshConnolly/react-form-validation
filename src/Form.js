@@ -128,6 +128,19 @@ class Form extends Component {
                />
                <p>{this.state.emailError}</p>
             </div>
+
+            <p>Recieve notifications by</p>
+
+            <label>
+                <input onChange={this.handleInputChange} name="notificationRadio" type="radio" value="email" checked={true} />
+                Email
+            </label>
+
+            <label>
+                <input onChange={this.handleInputChange} name="notificationRadio" type="radio" value="text" />
+                Text
+            </label>
+
             <button type="submit">Sumbit</button>
 
            
