@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 /*
  TODO
-    - validate all fields on submit (loop through / check state)
+    - validate all fields on submit (loop through / check state) - check error 
     - set validate function to take an array of inputs
     - check if isRequired is on element before checking validity
     - debounce for type validation
@@ -105,7 +105,7 @@ class Form extends Component {
         console.log('nameError', nameError)
         console.log('emailError', emailError)
         
-        // TODO still submitting empyt form
+        // TODO check if errors exist and fields are filled..
         if (nameError !== "" || typeof nameError !== 'undefined'  || emailError !== "" || typeof emailError !== 'undefined') {
             console.log("submitted");
         }
