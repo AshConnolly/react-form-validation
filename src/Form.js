@@ -42,7 +42,7 @@ function validateInput() {
             errors[errorName] = "please fill this in";
         } else if (validationType === "name") {
             if (input.value.match(nameRegex) === null || input.value.length < 3) {
-                errors[errorName] = "Name must be at elast 3 characters";
+                errors[errorName] = "Name must be at least 3 characters";
             }
         } else if (validationType === "email") {
             if (input.value.match(emailRegex) === null) {
@@ -118,13 +118,13 @@ class Form extends Component {
                 <form action="" onSubmit={this.handleSubmit} noValidate>
                     <div>
                         <label htmlFor="name">Name</label>
-                        <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} onBlur={this.onBlur} placeholder="bob" data-validation-type="name" required />
                         <p>{this.state.nameError}</p>
+                        <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} onBlur={this.onBlur} placeholder="bob" data-validation-type="name" required />        
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
-                         <input type="email" value={this.state.email} name="email" onChange={this.handleInputChange} onBlur={this.onBlur} placeholder="bob@bobsplace.com" data-validation-type="email" required />
                         <p>{this.state.emailError}</p>
+                        <input type="email" value={this.state.email} name="email" onChange={this.handleInputChange} onBlur={this.onBlur} placeholder="bob@bobsplace.com" data-validation-type="email" required />
                     </div>
 
                     <p>Recieve notifications by</p>
